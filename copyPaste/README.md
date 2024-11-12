@@ -1,6 +1,5 @@
 # CopyPaste
----
-## challenge
+## Challenge
 ### Ctrl + C, Ctrl + V
 Given a sentence containing few instances of "Ctrl + C" and "Ctrl + V", return the sentence after those keyboard shortcuts have been applied!
 - "Ctrl + C" will copy all text behind it.
@@ -22,6 +21,7 @@ output = "The The Town The The Town"
 #### Notes
 - Keyboard shortcut commands will appear like normal words in a sentence but shouldn't be copied themselves (see example #2).
 - Pasting should add a space between words.
----
+## Selfnote
 I added some complexity to make the UX a bit better. I hope that is okay to do :)
+
 
