@@ -2,27 +2,38 @@ package cui;
 
 import java.util.Scanner;
 
-public class TimeConverter {
+public class TimeConverterApplication {
 
     public static void main(String[] args) {
-    	TimeConverter instance = new TimeConverter();
+    	TimeConverterApplication instance = new TimeConverterApplication();
     	instance.start();
     }
     
     private void start() {
-    	String inputTime = askTime();
-        String convertedTime;
-        if (inputTime.toUpperCase().contains("AM") || inputTime.toUpperCase().contains("PM")) {
-            // convert 12 to 24
-            convertedTime = convertTo24Hour(inputTime);
-        } else {
-            // convert 24 to 12
-            convertedTime = convertTo12Hour(inputTime);
-        }
+    	String inputTime;
+		do {
+    		inputTime = askTime();
+        	String convertedTime;
+        	if (inputTime.toLowerCase().contains("-q")) {
+        		break;
+        	}
+        	if (inputTime.toLowerCase().contains("-h")) {
+        		help();
+        		continue;
+        	}
+        	if (inputTime.toUpperCase().contains("AM") || inputTime.toUpperCase().contains("PM")) {
+            	// convert 12 to 24
+            	convertedTime = convertTo24Hour(inputTime);
+        	} else {
+            	// convert 24 to 12
+        		convertedTime = convertTo12Hour(inputTime);
+        	}
         
-        System.out.println("Converted Time: " + convertedTime);
+        	System.out.println(">> Converted Time: " + convertedTime + "\n");
+    	} while(inputTime!="-q");
+		System.out.println("Thanks for checking this out! Made by trgr-boi");
     }
-    
+    // ask time
     private String askTime() {
         @SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
@@ -31,12 +42,12 @@ public class TimeConverter {
         boolean isValid = false;
 
         do {
-        	System.out.print("Enter time (e.g., 02:30 PM or 14:30): ");
+        	System.out.print("Input (-h for help): ");
         	inputTime = scanner.nextLine();
         	if(!inputTime.isEmpty())
         		isValid= true;
         	if(inputTime.isEmpty())
-        		System.out.println("Input not valid");
+        		System.out.println("Input can not be empty!");
         	} while(!isValid);
 
 		return inputTime;
@@ -64,5 +75,10 @@ public class TimeConverter {
             return "Invalid time format!";
         }
     }
+    // help
+    private void help() {
+    	System.out.println("\n>> Enter a time\ne.g. 02:30 PM or 14:30\n-q to exit\n");
+    	return;
+    }
+    
 }
-
