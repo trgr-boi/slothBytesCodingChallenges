@@ -21,5 +21,5 @@ output ="5:05 am"
 - A 24-hour input time contains no suffix.
 ## SelfNote
 I made 2 versions; a simple one and a application one.
-The simple one is the core of the challenge. It only runs once and has nothing extra.
-The application one loops until you quit. Not that it really had a lot of funtion but I just like to make it this way :).
+- The simple one is the core of the challenge. It only runs once and has nothing extra.
+- The application one loops until you quit. Not that it really has a lot of funtion but I just like to make it this way :).
