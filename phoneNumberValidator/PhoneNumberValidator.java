@@ -1,7 +1,7 @@
 public class PhoneNumberValidator {
 	
     public static void main(String[] args) {
-//		>---------------------------Test Cases----------------------------<
+//      >---------------------------Test Cases----------------------------<
         System.out.println(isValidPhoneNumber("(123) 456-7890")); // true
         System.out.println(isValidPhoneNumber("(123)456-7890")); // false because no space
         System.out.println(isValidPhoneNumber("1111)555 2345"));  // false
